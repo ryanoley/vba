@@ -154,8 +154,8 @@ Sub import_statarb_raw()
     Set wshT = Worksheets("StatArb RAW")
     Set wbkS = Workbooks.Open(Filename:=dir_name & "\" & max_file)
     Set wshS = wbkS.Worksheets(1)
-    
-    wshT.Rows(1 & ":" & wshT.Rows.Count).Value = ""
+ 
+    wshT.Range("A1:I" & wshT.Rows.Count).Value = ""
     wshS.UsedRange.Copy Destination:=wshT.Range("A1")
     wbkS.Close SaveChanges:=False
     
