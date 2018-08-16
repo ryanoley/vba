@@ -1,5 +1,4 @@
 
-
 Sub vld_clear_existing_positions()
     Dim positions_start As Range
     Set positions_start = SectionLim("Positions", "Positions", "start")
@@ -43,58 +42,66 @@ Sub vld_load_quant_tracker_positions()
     ' ERN Holding
     Dim data As Range
     Set data = SectionColData("ERN", "Holding", "Ticker")
-    data.Copy
-    positions_end.Offset(1, 0).PasteSpecial xlPasteValues
+	If data.Cells(1, 1).Value <> "NUGT" Then
+		data.Copy
+		positions_end.Offset(1, 0).PasteSpecial xlPasteValues
     
-    Set data = SectionColData("ERN", "Holding", "RAM ID")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
-    
-    Set data = SectionColData("ERN", "Holding", "Position (Shares)")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+		Set data = SectionColData("ERN", "Holding", "RAM ID")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
+		
+		Set data = SectionColData("ERN", "Holding", "Position (Shares)")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+	End If
     
     ' ERN Taking Off
     Set positions_end = SectionLim("Positions", "Positions", "end")
     Set data = SectionColData("ERN", "Taking Off", "Ticker")
-    data.Copy
-    positions_end.Offset(1, 0).PasteSpecial xlPasteValues
-    
-    Set data = SectionColData("ERN", "Taking Off", "RAM ID")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
-    
-    Set data = SectionColData("ERN", "Taking Off", "Position (Shares)")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+	If data.Cells(1, 1).Value <> "NUGT" Then
+		data.Copy
+		positions_end.Offset(1, 0).PasteSpecial xlPasteValues
+		
+		Set data = SectionColData("ERN", "Taking Off", "RAM ID")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
+		
+		Set data = SectionColData("ERN", "Taking Off", "Position (Shares)")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+	End If
 
     ' PEAD Holding
     Set positions_end = SectionLim("Positions", "Positions", "end")
     Set data = SectionColData("PEAD", "Holding", "Ticker")
-    data.Copy
-    positions_end.Offset(1, 0).PasteSpecial xlPasteValues
-    
-    Set data = SectionColData("PEAD", "Holding", "RAM ID")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
-    
-    Set data = SectionColData("PEAD", "Holding", "Position (Shares)")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+	If data.Cells(1, 1).Value <> "NUGT" Then
+		data.Copy
+		positions_end.Offset(1, 0).PasteSpecial xlPasteValues
+		
+		Set data = SectionColData("PEAD", "Holding", "RAM ID")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
+		
+		Set data = SectionColData("PEAD", "Holding", "Position (Shares)")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+	End If
     
     ' PEAD Taking Off
     Set positions_end = SectionLim("Positions", "Positions", "end")
     Set data = SectionColData("PEAD", "Taking Off", "Ticker")
-    data.Copy
-    positions_end.Offset(1, 0).PasteSpecial xlPasteValues
-    
-    Set data = SectionColData("PEAD", "Taking Off", "RAM ID")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
-    
-    Set data = SectionColData("PEAD", "Taking Off", "Position (Shares)")
-    data.Copy
-    positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+	If data.Cells(1, 1).Value <> "NUGT" Then
+		data.Copy
+		positions_end.Offset(1, 0).PasteSpecial xlPasteValues
+		
+		Set data = SectionColData("PEAD", "Taking Off", "RAM ID")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_ramid).PasteSpecial xlPasteValues
+		
+		Set data = SectionColData("PEAD", "Taking Off", "Position (Shares)")
+		data.Copy
+		positions_end.Offset(1, col_ix_pos_qt_qty).PasteSpecial xlPasteValues
+	End If
     
 End Sub
 
