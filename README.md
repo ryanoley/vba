@@ -1,5 +1,5 @@
 # VBA
-Store all code related to RAM Excel files that have custom vb code built into them.  All vba is stored in the file as well as seperately in scripts here for versioning.
+Store all code related to Quant Tracking Excel files that have custom vb code built into them.  All vba is stored in the file as well as seperately in scripts here for versioning.
 
 ## Quant Tracker
 This workbook manages monitoring and trading as it relates to the Earnings and Post-Earnings trades.
